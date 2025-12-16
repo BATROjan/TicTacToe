@@ -2,6 +2,7 @@ using System;
 using UI;
 using UI.UIRoot;using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using VContainer.Unity;
 
@@ -12,8 +13,6 @@ public class MainMenuWindowUIController : IStartable
     private readonly UIDocument _uiDocument;
     
     private Label _label;
-
-    private int _count;
     
     public MainMenuWindowUIController(IUIRootController uiRootController)
     {
@@ -30,24 +29,15 @@ public class MainMenuWindowUIController : IStartable
 
     private void ShowWindow(IUIWindow window)
     {
-        _label = _uiDocument.rootVisualElement.Q<Label>("Count");
-        var addButton = _uiDocument.rootVisualElement.Q<Button>("AddButton");
-        var resetButton = _uiDocument.rootVisualElement.Q<Button>("ResetButton");
+        _label = _uiDocument.rootVisualElement.Q<Label>("NameText");
+        var startButton = _uiDocument.rootVisualElement.Q<Button>("StartButton");
         
-        addButton.RegisterCallback<ClickEvent>(Add);
-        resetButton.RegisterCallback<ClickEvent>(Reset);
+        startButton.RegisterCallback<ClickEvent>(StartGame);
+        _label.text = "TicTacToe";
     }
 
-    private void Add(ClickEvent e)
+    private void StartGame(ClickEvent e)
     {
-        _count++;
-        _label.text = _count.ToString();
+        SceneManager.LoadScene("GameScene");
     }
-
-    private void Reset(ClickEvent e)
-    {
-        _count = 0;
-        _label.text = _count.ToString();
-    }
-
 }

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-self: center; align-content: flex-end;">
+        <ui:Label text="TicTacToe" name="NameText" style="width: 600px; height: 200px; font-size: 101px; -unity-text-align: middle-center; justify-content: center; align-self: center; position: relative; align-items: stretch; align-content: flex-start; top: 10%;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; justify-content: flex-end; align-self: center; align-content: flex-end;">
+        <ui:Button text="Start" name="StartButton" style="width: 300px; height: 150px; font-size: 90px; align-self: center; top: -96px; bottom: 0; align-content: flex-end; justify-content: flex-end;" />
+    </ui:VisualElement>
+</ui:UXML>

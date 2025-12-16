@@ -6,7 +6,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-public class GameLifetimeScope : LifetimeScope
+public class MainMenuLifetimeScope : LifetimeScope
 {
     [SerializeField] private UIRootView _uiRootView;
     [SerializeField] private UIRootConfig _uiRootConfig;
