@@ -22,7 +22,6 @@ namespace UI
 
         public void Show()
         {
-            Debug.Log("AAAAAAA");
             OnShowed?.Invoke(this);
         }
 

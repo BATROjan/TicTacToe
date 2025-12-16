@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEngine;
 using VContainer.Unity;
-using IInitializable = VContainer.Unity.IInitializable;
 
 namespace UI.UIRoot
 {
@@ -24,7 +22,6 @@ namespace UI.UIRoot
             _uiRootConfig = uiRootConfig;
             
             _dictionaryViews = _uiFactory.CreateAll(_uiRootView.DiactivateContainer);
-            Debug.Log("UIRoot Created");
         }
         public void Start()
         {
@@ -48,7 +45,7 @@ namespace UI.UIRoot
         {
             var view = _dictionaryViews[type];
             view.transform.SetParent(_uiRootView.DiactivateContainer);
-            view.OnHided?.Invoke(view);
+            view.Hide();
         }
 
         public BaseUIWindowView GetWindow(UIWindowType type)

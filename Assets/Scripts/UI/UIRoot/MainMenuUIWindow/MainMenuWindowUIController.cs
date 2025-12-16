@@ -17,7 +17,6 @@ public class MainMenuWindowUIController : IStartable
     
     public MainMenuWindowUIController(IUIRootController uiRootController)
     {
-        Debug.Log("BBBB");
         _uiRootController = uiRootController;
         mainMenuUiView = (MainMenuUiView)_uiRootController.GetWindow(UIWindowType.MainMenu);
         _uiDocument = mainMenuUiView.UIDocument;
@@ -27,7 +26,6 @@ public class MainMenuWindowUIController : IStartable
     public void Start()
     {
         mainMenuUiView.OnShowed += ShowWindow;
-        Debug.Log("CCCC");
     }
 
     private void ShowWindow(IUIWindow window)
