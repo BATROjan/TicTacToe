@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using DefaultNamespace;
-using VContainer.Unity;
 
 namespace UI.UIRoot
 {
-    public class UIRootController : IUIRootController, IDisposable, IStartable
+    public class UIRootController : IUIRootController, IDisposable
     {
         private readonly IUIRootView _uiRootView;
         private readonly UIFactory _uiFactory;
@@ -13,24 +12,24 @@ namespace UI.UIRoot
         private Dictionary<UIWindowType, BaseUIWindowView> _dictionaryViews = new();
         public UIRootController(
             IUIRootView uiRootView, 
-            UIFactory uiFactory,
-            UIRootConfig uiRootConfig
+            UIRootConfig uiRootConfig,
+            UIFactory uiFactory
            )
         {
             _uiRootView = uiRootView;
             _uiFactory = uiFactory;
             _uiRootConfig = uiRootConfig;
-            
-            _dictionaryViews = _uiFactory.CreateAll(_uiRootView.DiactivateContainer);
         }
         public void Start()
         {
+            _dictionaryViews = _uiFactory.CreateAll(_uiRootView.DiactivateContainer);//перекинуть в метод старт и создавать нужные
+
             ShowWindow(UIWindowType.MainMenu);
         }
-        
+
         public BaseUIWindowView SpawnWindow(UIWindowType type)
         {
-            BaseUIWindowView view =  _uiFactory.Create(type, _uiRootView.DiactivateContainer);
+            BaseUIWindowView view =  _uiFactory.CreateWindow(type, _uiRootView.DiactivateContainer);
             return view;
         }
 

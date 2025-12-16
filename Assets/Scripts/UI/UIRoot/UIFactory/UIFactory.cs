@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UI;
+using UI.MainMenuUIWindow;
 using UI.UIRoot;
 using UnityEngine;
 using VContainer;
@@ -10,35 +11,24 @@ namespace DefaultNamespace
 {
     public class UIFactory : IUIFactory
     {
+        private readonly UIRootView _uiRootView;
         private readonly IObjectResolver _resolver;
         private readonly UIRootConfig _uiRootConfig;
 
         private Dictionary<UIWindowType, BaseUIWindowView> _dictionaryViews = new();
         private Dictionary<UIWindowType, BaseUIWindowView> _allDictionaryViews = new();
         
-        public UIFactory(IObjectResolver resolver, UIRootConfig uiRootConfig)
+        public UIFactory(
+            UIRootView uiRootView,
+            IObjectResolver resolver, 
+            UIRootConfig uiRootConfig)
         {
+            _uiRootView = uiRootView;
             _resolver = resolver;
             _uiRootConfig = uiRootConfig;
             
             _dictionaryViews = _uiRootConfig.GetDictionaryVies();
         }
-
-
-        public BaseUIWindowView Create(UIWindowType type, Transform transform)
-        {
-            if (!_dictionaryViews.TryGetValue(type, out BaseUIWindowView prefab))
-            {
-                Debug.LogError($"[UnitViewFactory] No prefab registered for UnitType: {type}");
-                return null;
-            }
-            
-            BaseUIWindowView instance = _resolver.Instantiate(prefab);
-            instance.transform.SetParent(transform);
-
-            return instance;
-        }
-        
         public Dictionary<UIWindowType, BaseUIWindowView> CreateAll(Transform transform)
         {
             foreach (var view in _dictionaryViews.Values)
@@ -50,6 +40,20 @@ namespace DefaultNamespace
             }
 
             return _allDictionaryViews;
+        }
+
+        public BaseUIWindowView CreateWindow(UIWindowType type, Transform transform)
+        {
+            if (!_dictionaryViews.TryGetValue(type, out BaseUIWindowView prefab))
+            {
+                Debug.LogError($"[UnitViewFactory] No prefab registered for UnitType: {type}");
+                return null;
+            }
+            
+            BaseUIWindowView instance = _resolver.Instantiate(prefab);
+            instance.transform.SetParent(transform);
+
+            return instance;
         }
     }
 }
