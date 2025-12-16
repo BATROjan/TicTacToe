@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: center; align-self: center;">
+        <ui:Label text="0" name="Count" style="width: 200px; height: 100px; font-size: 70px; -unity-text-align: middle-center;" />
+        <ui:Button text="+1" name="AddButton" style="width: 200px; height: 100px; font-size: 70px;" />
+        <ui:Button text="+1" name="ResetButton" style="width: 200px; height: 100px; font-size: 70px;" />
+    </ui:VisualElement>
+</ui:UXML>
