@@ -1,0 +1,16 @@
+{
+    "name": "GridAssemDef",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8876b5ff3b4849840aa9575006bec068"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

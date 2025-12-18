@@ -168,7 +168,11 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   _uiRootView: {fileID: 2132559902321013555, guid: 3fd9be6302ece5d4f9ac40a744e51ece, type: 3}
+  _cellView: {fileID: 731174664988840055, guid: f9d194aebe011e94c97d1dada7e8300e, type: 3}
+  _gridView: {fileID: 1686792046727458587, guid: f8ee506d088dbc240b81080df45e42d6, type: 3}
   _uiRootConfig: {fileID: 11400000, guid: 976e6fad7ba5f324c8f9918ae7d083b3, type: 2}
+  _cellConfig: {fileID: 11400000, guid: edb3d8c7e9e920b4bbbe00922a60d830, type: 2}
+  _gridConfig: {fileID: 11400000, guid: bd98cc71c8fd7e64abc5054bc2ce019e, type: 2}
 --- !u!1 &2097748329
 GameObject:
   m_ObjectHideFlags: 0
