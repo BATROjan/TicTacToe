@@ -10,16 +10,16 @@ namespace DefaultNamespace.Piece
     {
         [SerializeField] private PieceModel[] _pieceModel;
         
-        private Dictionary<PieceType, PieceModel> _viewsDictionary;
+        private Dictionary<ProjectConst.PieceType, PieceModel> _viewsDictionary;
 
-        public PieceModel GetModelByType(PieceType type)
+        public PieceModel GetModelByType(ProjectConst.PieceType type)
         {
-            Init();
             return _viewsDictionary[type];
         }
 
-        public Dictionary<PieceType, PieceModel> GetDictionaryModels()
+        public Dictionary<ProjectConst.PieceType, PieceModel> GetDictionaryModels()
         {
+            Init();
             return _viewsDictionary;
         }
         private void Init()
@@ -38,12 +38,7 @@ namespace DefaultNamespace.Piece
     [Serializable]
     public struct PieceModel
     {
-        public PieceType PieceType;
+        public ProjectConst.PieceType PieceType;
         public Sprite Sprite;
-    }
-    public enum PieceType
-    {
-        Tic,
-        Tac
     }
 }

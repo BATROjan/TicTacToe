@@ -4,7 +4,7 @@ namespace DefaultNamespace.Piece
 {
     public class PieceView : MonoBehaviour
     {
-        public PieceType Type
+        public ProjectConst.PieceType Type
         {
             get => _type;
             set
@@ -23,6 +23,6 @@ namespace DefaultNamespace.Piece
 
         [SerializeField]private SpriteRenderer _spriteRenderer;
 
-        private PieceType _type;
+        private ProjectConst.PieceType _type;
     }
 }

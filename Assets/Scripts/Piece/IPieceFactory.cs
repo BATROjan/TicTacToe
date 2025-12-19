@@ -4,7 +4,7 @@ namespace DefaultNamespace.Piece
 {
     public interface IPieceFactory
     {
-        PieceView CreateCellView(PieceType type, Transform transform);
+        PieceView CreateCellView(ProjectConst.PieceType type, Transform transform);
 
     }
 }

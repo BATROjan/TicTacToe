@@ -1,5 +1,6 @@
 ﻿using DefaultNamespace.Grid;
 using DefaultNamespace.Grid.Cell;
+using DefaultNamespace.InputController;
 using DefaultNamespace.Piece;
 using UI;
 using UI.MainMenuUIWindow;
@@ -20,6 +21,7 @@ namespace DefaultNamespace
         [SerializeField] private UIRootConfig _uiRootConfig;
         [SerializeField] private CellConfig _cellConfig;
         [SerializeField] private GridConfig _gridConfig;
+        [SerializeField] private PieceConfig _pieceConfig;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -38,10 +40,13 @@ namespace DefaultNamespace
             builder.RegisterInstance(_uiRootConfig);
             builder.RegisterInstance(_cellConfig);
             builder.RegisterInstance(_gridConfig);
+            builder.RegisterInstance(_pieceConfig);
         
             //Controllers
             builder.RegisterEntryPoint<GameController>();
             builder.RegisterEntryPoint<UIRootController>();
+            builder.RegisterEntryPoint<MouseInputController>().AsSelf();
+
             
             //Factories
             builder.Register<UIFactory>(Lifetime.Scoped).AsSelf().As<IUIFactory>();

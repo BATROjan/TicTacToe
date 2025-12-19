@@ -11,7 +11,7 @@ namespace DefaultNamespace.Piece
         private readonly IObjectResolver _resolver;
         private readonly PieceConfig _pieceConfig;
         
-        private Dictionary<PieceType, PieceModel> _dictionaryViews;
+        private Dictionary<ProjectConst.PieceType, PieceModel> _dictionaryViews;
 
         public PieceFactory(
             PieceView pieceView,
@@ -25,7 +25,7 @@ namespace DefaultNamespace.Piece
             _dictionaryViews = _pieceConfig.GetDictionaryModels();
         }
         
-        public PieceView CreateCellView(PieceType type, Transform transform)
+        public PieceView CreateCellView(ProjectConst.PieceType type, Transform transform)
         {
             PieceView view = _resolver.Instantiate(_pieceView);
             view.transform.SetParent(transform, false);

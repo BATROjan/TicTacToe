@@ -2,7 +2,8 @@
     "name": "CellAssemDef",
     "rootNamespace": "",
     "references": [
-        "VContainer"
+        "VContainer",
+        "ConstAssemDef"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

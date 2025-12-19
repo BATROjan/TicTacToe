@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using DefaultNamespace.InputController;
 using UnityEngine;
 
 namespace DefaultNamespace.Piece
@@ -6,15 +8,15 @@ namespace DefaultNamespace.Piece
     public class PieceController: IPieceController
     {
         private readonly IPieceFactory _pieceFactory;
+        
         private List<PieceView> _pieceViewList = new ();
         
-        public PieceController(
-            IPieceFactory pieceFactory)
+        public PieceController(IPieceFactory pieceFactory)
         {
             _pieceFactory = pieceFactory;
         }
 
-        public PieceView SpawnView(PieceType type, Transform transform)
+        public PieceView SpawnView(ProjectConst.PieceType type, Transform transform)
         {
             var view = _pieceFactory.CreateCellView(type, transform);
             _pieceViewList.Add(view);
@@ -24,6 +26,11 @@ namespace DefaultNamespace.Piece
 
         public void DespawnView(PieceView view)
         {
+        }
+
+        public void Dispose()
+        {
+            
         }
     }
 }

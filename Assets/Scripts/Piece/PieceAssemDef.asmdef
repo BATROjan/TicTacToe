@@ -2,7 +2,9 @@
     "name": "PieceAssemDef",
     "rootNamespace": "",
     "references": [
-        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:6b593f4d98c18ba4ebdff0b8f2a44e4b",
+        "GUID:e5b02e381ea61624a913bb5acf6f2325"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
