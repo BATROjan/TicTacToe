@@ -174,6 +174,7 @@ MonoBehaviour:
   _uiRootConfig: {fileID: 11400000, guid: 976e6fad7ba5f324c8f9918ae7d083b3, type: 2}
   _cellConfig: {fileID: 11400000, guid: edb3d8c7e9e920b4bbbe00922a60d830, type: 2}
   _gridConfig: {fileID: 11400000, guid: bd98cc71c8fd7e64abc5054bc2ce019e, type: 2}
+  _pieceConfig: {fileID: 11400000, guid: 85d05a565c81af94cbf1517bd9e58c48, type: 2}
 --- !u!1 &2097748329
 GameObject:
   m_ObjectHideFlags: 0
